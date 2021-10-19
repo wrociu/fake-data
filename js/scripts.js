@@ -1,12 +1,16 @@
 // CONSTANS
 //#region constans
 const bConsoleLog = true;
+const MIN_YEAR = 1930;
+const MAX_YEAR = 2015;
 //#endregion
 
 // EVENT LISTENERS
 //#region eventlisteners
 document.getElementById("btnValidatePesel").addEventListener("click", validatePeselHandler);
+document.getElementById("btnGeneratePesel").addEventListener("click", generatePesel);
 document.getElementById("txtPesel").addEventListener("click", clearValidation);
+
 //#endregion
 
 // GENERAL USAGE FUNCTIONS
@@ -19,6 +23,12 @@ function FakeDataConsoleLog(text_to_log, function_name)
         console.log('        ' + text_to_log);
     }
 }
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
 //#endregion
 
 // CLEAR VALIDATION DEVS
@@ -27,7 +37,7 @@ function clearValidation()
 {
     document.getElementById('divPeselOk').innerHTML = "";
 }
-
+//#endregion
 
 // VALIDATE PESEL
 //#region validatePesel
@@ -73,3 +83,40 @@ function validatePesel(pesel) {
     }
 }
 //#endregion
+
+// GENERATE PESEL
+function daysInMonth (month, year) {
+    return new Date(year, month, 0).getDate();
+}
+
+function getMonthOffset(century) {
+    switch (century) {
+    case 18: return 80;
+    case 19: return 0;
+    case 20: return 20;
+    case 21: return 40;
+    case 22: return 60;
+    }
+}
+
+function generatePesel()
+{
+    clearValidation();
+    
+    var pesel_year = getRandomInt(MIN_YEAR, MAX_YEAR);
+    var pesel_month = getRandomInt(1, 12);
+    var pesel_day = getRandomInt(1, daysInMonth(pesel_month, pesel_year));
+
+    var century = Math.floor(pesel_year / 100);
+
+    var monthOffset = getMonthOffset(century);
+
+    pesel_month = pesel_month + monthOffset;
+
+    var pesel_string = pesel_year.toString().substring(2) + pesel_month.toString().padStart(2, '0') + pesel_day.toString().padStart(2, '0');
+
+
+    
+    document.getElementById("txtPesel").value = pesel_string;
+
+}
