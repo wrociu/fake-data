@@ -1,11 +1,16 @@
 // CONSTANS
+//#region constans
 const bConsoleLog = true;
+//#endregion
 
 // EVENT LISTENERS
+//#region eventlisteners
 document.getElementById("btnValidatePesel").addEventListener("click", validatePeselHandler);
 document.getElementById("txtPesel").addEventListener("click", clearValidation);
+//#endregion
 
 // GENERAL USAGE FUNCTIONS
+//#region helpers
 function FakeDataConsoleLog(text_to_log, function_name)
 {
     if (bConsoleLog == true)
@@ -14,14 +19,18 @@ function FakeDataConsoleLog(text_to_log, function_name)
         console.log('        ' + text_to_log);
     }
 }
+//#endregion
 
 // CLEAR VALIDATION DEVS
+//#region clearValidation
 function clearValidation()
 {
     document.getElementById('divPeselOk').innerHTML = "";
 }
 
+
 // VALIDATE PESEL
+//#region validatePesel
 function validatePeselHandler()
 {    
         
@@ -40,6 +49,7 @@ function validatePeselHandler()
     }  
 
 }
+
 
 function validatePesel(pesel) {
     
@@ -62,3 +72,4 @@ function validatePesel(pesel) {
         return (parseInt(digits[10])==digitssum);
     }
 }
+//#endregion
