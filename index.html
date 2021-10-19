@@ -27,19 +27,23 @@
 
     <div class="container">
     
-    <div class="jumbotron">
-      <h1 class="display-4">Fake Data - Generator danych IT.</h1>
-      <p class="lead">Generator PESEL, NIP, REGON, IBAN i numeru dowodu osobistego dla programistów i testerów.</p>
-      <hr class="my-4">
-    </div>
+      <div class="jumbotron">
+        <h1 class="display-4">Fake Data - Generator danych IT.</h1>
+        <p class="lead">Generator PESEL, NIP, REGON, IBAN i numeru dowodu osobistego dla programistów i testerów.</p>
+        <hr class="my-4">
+      </div>
 
-    <!-- Generator Pesel -->
-    <div class="form-floating mb-3">
-      <input type="email" class="form-control mb-3" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">PESEL</label>
-      <button type="button" class="btn btn-primary">Generuj</button>
-      <button type="button" class="btn btn-primary">Waliduj</button>
-    </div>
+      <!-- Generator Pesel -->
+      <div class="form-floating mb-3">
+        <input id="txtPesel" type="text" class="form-control mb-3" />
+        <label for="floatingInput">PESEL</label>
+        <button type="button" class="btn btn-primary">Generuj</button>
+        <button type="button" id="btnValidatePesel" class="btn btn-primary">Waliduj</button>
+        <div id="divPeselOk" class="visible">
+          <!-- Response: innerHTML handled in JS -->
+          <!-- <div  class="alert alert-success mt-3" role="alert">Pesel jest prawidłowy.</div> -->
+        </div>
+      </div>
 
     </div>
 
