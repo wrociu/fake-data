@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <title>A Basic HTML5 Template with Bootstrap</title>
+    <meta name="description" content="A simple HTML5 Template for new projects.">
+    <meta name="author" content="wrociu">
+    
+    <!-- Open Graph meta elements -->
+    <meta property="og:title" content="A Basic HTML5 Template with Bootstrap">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/wrociu/html-bootstrap-starter">
+    <meta property="og:description" content="A simple HTML5 Template for new projects.">
+    <meta property="og:image" content="image.png">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+
+    <!-- Link section -->
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+  </head>
+  <body>
+
+    <div class="container">
+    
+      <div class="jumbotron">
+        <h1 class="display-4">Fake Data - Generator danych IT.</h1>
+        <p class="lead">Generator PESEL, NIP, REGON, IBAN i numeru dowodu osobistego dla programistów i testerów.</p>
+        <hr class="my-4">
+      </div>
+
+      <!-- Generator Pesel -->
+      <div class="form-floating mb-3">
+        <input id="txtPesel" type="text" class="form-control mb-3" />
+        <label for="floatingInput">PESEL</label>
+        <button id="btnGeneratePesel" type="button" class="btn btn-primary">Generuj</button>
+        <button id="btnValidatePesel" type="button" class="btn btn-primary">Waliduj</button>
+        <div id="divPeselOk" class="visible">
+          <!-- Response: innerHTML handled in JS -->
+          <!-- <div  class="alert alert-success mt-3" role="alert">Pesel jest prawidłowy.</div> -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    
+    <!-- HTML Bootstap starter JS -->
+    <script src="js/scripts.js"></script>  
+</body>
+</html>
